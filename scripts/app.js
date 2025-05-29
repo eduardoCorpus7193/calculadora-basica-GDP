@@ -18,7 +18,7 @@ class Multiply extends OperationStrategy {
 }
 
 class Divide extends OperationStrategy {
-  execute(a, b) { return b === 0 ? 'Error' : a / b; }
+  execute(a, b) { return b === 0 ? 'Invalid input' : a / b; }
 }
 
 // ---------- Template Method Pattern ----------
@@ -28,7 +28,7 @@ class CalculatorTemplate {
   }
 
   calculate(a, b, strategy) {
-    if (typeof a !== 'number' || typeof b !== 'number') return 'Error';
+    if (typeof a !== 'number' || typeof b !== 'number') return 'Invalid input';
     return this.executeOperation(a, b, strategy);
   }
 
